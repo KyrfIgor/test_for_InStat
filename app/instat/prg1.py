@@ -1,6 +1,6 @@
 from aiohttp import web
 import pac_mode_a as pm
-
+import iks_zero as iz
 
 routes = web.RouteTableDef()
 
@@ -9,7 +9,10 @@ routes = web.RouteTableDef()
 async def print_class(request):
     i_am = pm.moduleA.class_im('this need print')
     i_am.print_im()
-    return web.Response(text="test for InStat (aiohttp)")
+
+    my_game = iz.main_iz.game_place()
+    game_st = my_game.ver_game_state()
+    return web.Response(text="test for InStat (aiohttp) "+"статус игры "+ game_st)
 
 
 @routes.post('/post')
