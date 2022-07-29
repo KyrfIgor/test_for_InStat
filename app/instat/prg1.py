@@ -1,5 +1,5 @@
 from aiohttp import web
-import app.pac_mod_a as pm
+import pac_mode_a as pm
 
 
 routes = web.RouteTableDef()
@@ -7,7 +7,7 @@ routes = web.RouteTableDef()
 
 @routes.get('/')
 async def print_class(request):
-    i_am = pm.class_im('this need print')
+    i_am = pm.moduleA.class_im('this need print')
     i_am.print_im()
     return web.Response(text="test for InStat (aiohttp)")
 
